@@ -1,15 +1,23 @@
-# Craft Sidebar Enhancer
+# Sprout Forms Google ReCAPATCHA
 
-With Craft 2.5 came a redesigned control panel. Although pretty, it takes a lot more clicks just to find the setting you're looking for. Not anymore! Craft Sidebar Enhancer adds extended options to Craft's existing sidebar.
+Adds [Google ReCAPATCHA](https://www.google.com/recaptcha/intro/index.html) to [Sprout Forms](http://sprout.barrelstrengthdesign.com/craft-plugins/forms) Craft plugin.
 
-Just like the gear option in previous versions of Craft, Craft Sidebar Enhancer adds both system & general options back to the central navigation - no longer requring an extra step to the 'settings' button.
-
-### Installation
-1. Download & unzip the file and place the `sidebarenhancer` directory into your `craft/plugins` directory
-2.  -OR- do a `git@github.com:nicholasodo/craft-sidebarenhancer.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
+## Installation
+1. Download & unzip the file and place the `sproutformsgooglerecaptcha` directory into your `craft/plugins` directory
+2.  -OR- do a `git@github.com:nicholasodo/craft-sproutformsgooglerecaptcha.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
 4. Install plugin in the Craft Control Panel under Settings > Plugins
-5. The plugin folder should be named `sidebarenhancer` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
+5. Configure your site key/secret key in settings.
+5. The plugin folder should be named `sproutformsgooglerecaptcha` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
 
+## Usage
 
-### Screenshot
-![Screenshot](https://raw.github.com/nicholasodo/craft-sidebarenhancer/master/images/screenshot.png)
+Simply include both `{% includeCssResource 'sproutformsgooglerecaptcha/css/style.css' %}` and `{% includeJsResource 'sproutformsgooglerecaptcha/js/script.js' %}` in your template. Then use one of the following methods to output the Google ReCAPATCHA depending on your setup.
+
+### Automatic
+Sprout Forms Google ReCAPATCHA is meant to work out of the box using Sprout Form's `sproutForms.modifyForm` hook. In which case, you don't have to do anything!
+
+### Custom
+In instances where you're creating the form code yourself, there are 2 ways to output the Google ReCAPATCHA:
+
+1. Use the `{{ craft.sproutFormsGoogleRecaptcha.getReCapatchaCode()|raw }}` tag inside the `<form>` tag.
+2. -OR- add `js-hasReCapatcha` class to your form. Google's ReCAPATCHA will be prepended to the end of your form automatically.
