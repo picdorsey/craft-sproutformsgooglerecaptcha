@@ -1,0 +1,15 @@
+{
+	"name": "nicholasodo/sproutformsgooglerecaptcha",
+	"description": "Adds Google reCAPTCHA to sprout forms.",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Nicholas O'Donnell",
+			"homepage": "http://nicholasodo.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0",
+		"google/recaptcha": "~1.1"
+	}
+}

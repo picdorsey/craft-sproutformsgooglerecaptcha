@@ -1,0 +1,34 @@
+{#
+/**
+ * Sprout Forms Google reCAPTCHA plugin for Craft CMS
+ *
+ * Sprout Forms Google reCAPTCHA Settings.twig
+ *
+ * @author    Nicholas O&#39;Donnell
+ * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
+ * @link      http://nicholasodo.com
+ * @package   SproutFormsGoogleRecaptcha
+ * @since     1.0.0
+ */
+#}
+
+{% import '_includes/forms' as forms %}
+
+{% includeCssResource 'sproutformsgooglerecaptcha/css/style.css' %}
+{% includeJsResource 'sproutformsgooglerecaptcha/js/script.js' %}
+
+{{ forms.textField({
+    label: 'Site Key',
+    required: true,
+    id: 'siteKey',
+    name: 'siteKey',
+    value: settings.siteKey|default('')
+}) }}
+
+{{ forms.textField({
+    label: 'Secret Key',
+    required: true,
+    id: 'secreyKey',
+    name: 'secreyKey',
+    value: settings.secreyKey|default('')
+}) }}

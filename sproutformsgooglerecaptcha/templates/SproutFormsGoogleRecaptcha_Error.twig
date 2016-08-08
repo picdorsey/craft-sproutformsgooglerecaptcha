@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>Error - {{ siteName }}</title>
+    <link rel="stylesheet" type="text/css" href="/cpresources/css/craft.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script type="text/javascript">
+        // Fix for Firefox autofocus CSS bug
+        // See: http://stackoverflow.com/questions/18943276/html-5-autofocus-messes-up-css-loading/18945951#18945951
+    </script>
+    </head>
+<body class="message ltr">
+        <div class="message-container">
+        <div id="message" class="pane">
+            <h2>Error submitting form.</h2>
+
+            <p>The Google ReCAPATCHA failed.</p>
+        </div>
+    </div>
+        <script type="text/javascript">
+        var message = document.getElementById('message'),
+            margin = -Math.round(message.offsetHeight / 2);
+        message.setAttribute('style', 'margin-top: '+margin+'px !important;');
+    </script>
+</body>
+</html>
+
