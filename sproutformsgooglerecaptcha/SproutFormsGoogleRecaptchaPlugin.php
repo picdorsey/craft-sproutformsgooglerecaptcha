@@ -44,7 +44,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getDocumentationUrl()
     {
-        return 'https://github.com/nicholasodo/sproutformsgooglerecaptcha/blob/master/README.md';
+        return 'https://github.com/nicholasodo/craft-sproutformsgooglerecaptcha/blob/master/README.md';
     }
 
     /**
@@ -60,7 +60,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getReleaseFeedUrl()
     {
-        return 'https://raw.githubusercontent.com/nicholasodo/sproutformsgooglerecaptcha/master/releases.json';
+        return 'https://raw.githubusercontent.com/nicholasodo/craft-sproutformsgooglerecaptcha/master/releases.json';
     }
 
     /**
