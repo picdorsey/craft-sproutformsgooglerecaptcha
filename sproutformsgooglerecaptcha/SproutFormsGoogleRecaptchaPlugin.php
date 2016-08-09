@@ -58,6 +58,14 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
     /**
      * @return string
      */
+    public function getReleaseFeedUrl()
+    {
+        return 'https://raw.githubusercontent.com/nicholasodo/sproutformsgooglerecaptcha/master/releases.json';
+    }
+
+    /**
+     * @return string
+     */
     public function getSchemaVersion()
     {
         return '1.0.0';
