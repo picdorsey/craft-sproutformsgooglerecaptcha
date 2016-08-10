@@ -20,8 +20,6 @@ var app = {
         scriptTag.type = 'text/javascript';
         scriptTag.src = 'https://www.google.com/recaptcha/api.js';
         (document.getElementsByTagName('head')[0] || document.documentElement ).appendChild(scriptTag);
-
-        console.log(scriptTag);
     },
 
     injectRecaptchaViaClass: function () {
@@ -37,8 +35,6 @@ var app = {
 
             for (var i = 0; i < $elements.length; i++) {
                 var $elem = $elements[i];
-                console.log($elem);
-
                 $elem.innerHTML += script;
             }
 
