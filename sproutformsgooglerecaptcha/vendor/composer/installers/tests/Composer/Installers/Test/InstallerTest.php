@@ -196,7 +196,7 @@ class InstallerTest extends TestCase
      *
      * @dataProvider dataForTestInstallPath
      */
-    public function testInstallPath($type, $path, $name, $version = '1.0.0')
+    public function testInstallPath($type, $path, $name, $version = '1.0.1')
     {
         $installer = new Installer($this->io, $this->composer);
         $package = new Package($name, $version, $version);
@@ -343,7 +343,7 @@ class InstallerTest extends TestCase
     public function testGetCakePHPInstallPathException()
     {
         $installer = new Installer($this->io, $this->composer);
-        $package = new Package('shama/ftp', '1.0.0', '1.0.0');
+        $package = new Package('shama/ftp', '1.0.1', '1.0.1');
 
         $package->setType('cakephp-whoops');
         $result = $installer->getInstallPath($package);
@@ -355,9 +355,9 @@ class InstallerTest extends TestCase
     public function testCustomInstallPath()
     {
         $installer = new Installer($this->io, $this->composer);
-        $package = new Package('shama/ftp', '1.0.0', '1.0.0');
+        $package = new Package('shama/ftp', '1.0.1', '1.0.1');
         $package->setType('cakephp-plugin');
-        $consumerPackage = new RootPackage('foo/bar', '1.0.0', '1.0.0');
+        $consumerPackage = new RootPackage('foo/bar', '1.0.1', '1.0.1');
         $this->composer->setPackage($consumerPackage);
         $consumerPackage->setExtra(array(
             'installer-paths' => array(
@@ -377,7 +377,7 @@ class InstallerTest extends TestCase
     public function testCustomInstallerName()
     {
         $installer = new Installer($this->io, $this->composer);
-        $package = new Package('shama/cakephp-ftp-plugin', '1.0.0', '1.0.0');
+        $package = new Package('shama/cakephp-ftp-plugin', '1.0.1', '1.0.1');
         $package->setType('cakephp-plugin');
         $package->setExtra(array(
             'installer-name' => 'FTP',
@@ -392,9 +392,9 @@ class InstallerTest extends TestCase
     public function testCustomTypePath()
     {
         $installer = new Installer($this->io, $this->composer);
-        $package = new Package('slbmeh/my_plugin', '1.0.0', '1.0.0');
+        $package = new Package('slbmeh/my_plugin', '1.0.1', '1.0.1');
         $package->setType('wordpress-plugin');
-        $consumerPackage = new RootPackage('foo/bar', '1.0.0', '1.0.0');
+        $consumerPackage = new RootPackage('foo/bar', '1.0.1', '1.0.1');
         $this->composer->setPackage($consumerPackage);
         $consumerPackage->setExtra(array(
             'installer-paths' => array(
@@ -413,9 +413,9 @@ class InstallerTest extends TestCase
     public function testVendorPath()
     {
         $installer = new Installer($this->io, $this->composer);
-        $package = new Package('penyaskito/my_module', '1.0.0', '1.0.0');
+        $package = new Package('penyaskito/my_module', '1.0.1', '1.0.1');
         $package->setType('drupal-module');
-        $consumerPackage = new RootPackage('drupal/drupal', '1.0.0', '1.0.0');
+        $consumerPackage = new RootPackage('drupal/drupal', '1.0.1', '1.0.1');
         $this->composer->setPackage($consumerPackage);
         $consumerPackage->setExtra(array(
           'installer-paths' => array(
@@ -434,7 +434,7 @@ class InstallerTest extends TestCase
     public function testNoVendorName()
     {
         $installer = new Installer($this->io, $this->composer);
-        $package = new Package('sfPhpunitPlugin', '1.0.0', '1.0.0');
+        $package = new Package('sfPhpunitPlugin', '1.0.1', '1.0.1');
 
         $package->setType('symfony1-plugin');
         $result = $installer->getInstallPath($package);
@@ -447,7 +447,7 @@ class InstallerTest extends TestCase
     public function testTypo3Inflection()
     {
         $installer = new Installer($this->io, $this->composer);
-        $package = new Package('typo3/fluid', '1.0.0', '1.0.0');
+        $package = new Package('typo3/fluid', '1.0.1', '1.0.1');
 
         $package->setAutoload(array(
             'psr-0' => array(
@@ -462,7 +462,7 @@ class InstallerTest extends TestCase
 
     public function testUninstallAndDeletePackageFromLocalRepo()
     {
-        $package = new Package('foo', '1.0.0', '1.0.0');
+        $package = new Package('foo', '1.0.1', '1.0.1');
 
         $installer = $this->getMock('Composer\Installers\Installer', array('getInstallPath'), array($this->io, $this->composer));
         $installer->expects($this->once())->method('getInstallPath')->with($package)->will($this->returnValue(sys_get_temp_dir().'/foo'));

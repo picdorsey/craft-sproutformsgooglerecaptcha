@@ -93,10 +93,10 @@ You can see an end-to-end working example in
 
 ## Upgrading
 
-### From 1.0.0
+### From 1.0.1
 
-The previous version of this client is still available on the `1.0.0` tag [in
-this repo](https://github.com/google/recaptcha/tree/1.0.0) but it is purely for
+The previous version of this client is still available on the `1.0.1` tag [in
+this repo](https://github.com/google/recaptcha/tree/1.0.1) but it is purely for
 reference and will not receive any updates.
 
 The major changes in 1.1.0 are:

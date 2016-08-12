@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
  * @link      http://nicholasodo.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     1.0.0
+ * @since     1.0.1
  */
 
 namespace Craft;

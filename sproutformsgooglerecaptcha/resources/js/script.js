@@ -7,10 +7,10 @@
  * @copyright Copyright (c) 2016 Nicholas O'Donnell
  * @link      http://nicholasodo.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     1.0.0
+ * @since     1.0.1
  */
 
-var app = {
+var sproutFormsGoogleReCAPTCHA = {
     init: function () {
         this.injectRecaptchaViaClass();
     },
@@ -106,6 +106,6 @@ var ajax = {
 
 document.onreadystatechange = function () {
     if (document.readyState === 'interactive') {
-        app.init();
+        sproutFormsGoogleReCAPTCHA.init();
     }
 }
