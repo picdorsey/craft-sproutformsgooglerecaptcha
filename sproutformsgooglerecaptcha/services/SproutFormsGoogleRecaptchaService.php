@@ -6,7 +6,7 @@
  *
  * @author    Nicholas O&#39;Donnell
  * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
- * @link      http://nicholasodo.com
+ * @link      http://picdorsey.com
  * @package   SproutFormsGoogleRecaptcha
  * @since     1.0.1
  */

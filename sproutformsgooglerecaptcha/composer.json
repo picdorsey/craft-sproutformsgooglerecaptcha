@@ -1,11 +1,11 @@
 {
-	"name": "nicholasodo/sproutformsgooglerecaptcha",
+	"name": "picdorsey/sproutformsgooglerecaptcha",
 	"description": "Adds Google reCAPTCHA to sprout forms.",
 	"type": "craft-plugin",
 	"authors": [
 		{
-			"name": "Nicholas O'Donnell",
-			"homepage": "http://nicholasodo.com"
+			"name": "Piccirilli Dorsey, Inc.",
+			"homepage": "http://picdorsey.com"
 		}
 	],
 	"require": {

@@ -4,7 +4,7 @@ Adds [Google ReCAPATCHA](https://www.google.com/recaptcha/intro/index.html) to [
 
 ## Installation
 1. Download & unzip the file and place the `sproutformsgooglerecaptcha` directory into your `craft/plugins` directory
-2.  -OR- do a `git@github.com:nicholasodo/craft-sproutformsgooglerecaptcha.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
+2.  -OR- do a `git@github.com:picdorsey/craft-sproutformsgooglerecaptcha.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
 4. Install plugin in the Craft Control Panel under Settings > Plugins
 5. Configure your site key/secret key in settings.
 5. The plugin folder should be named `sproutformsgooglerecaptcha` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.

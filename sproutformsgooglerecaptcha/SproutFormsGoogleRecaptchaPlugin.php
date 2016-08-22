@@ -6,7 +6,7 @@
  *
  * @author    Nicholas O&#39;Donnell
  * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
- * @link      http://nicholasodo.com
+ * @link      http://picdorsey.com
  * @package   SproutFormsGoogleRecaptcha
  * @since     1.0.1
  */
@@ -44,7 +44,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getDocumentationUrl()
     {
-        return 'https://github.com/nicholasodo/craft-sproutformsgooglerecaptcha/blob/master/README.md';
+        return 'https://github.com/picdorsey/craft-sproutformsgooglerecaptcha/blob/master/readme.md';
     }
 
     /**
@@ -60,7 +60,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getReleaseFeedUrl()
     {
-        return 'https://raw.githubusercontent.com/nicholasodo/craft-sproutformsgooglerecaptcha/master/releases.json';
+        return 'https://raw.githubusercontent.com/picdorsey/craft-sproutformsgooglerecaptcha/master/releases.json';
     }
 
     /**
@@ -76,7 +76,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getDeveloper()
     {
-        return 'Nicholas O\'Donnell';
+        return 'Piccirilli Dorsey, Inc.';
     }
 
     /**
@@ -84,7 +84,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getDeveloperUrl()
     {
-        return 'http://nicholasodo.com';
+        return 'http://picdorsey.com';
     }
 
     /**
