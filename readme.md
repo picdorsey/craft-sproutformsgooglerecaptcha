@@ -11,7 +11,7 @@ Adds [Google ReCAPATCHA](https://www.google.com/recaptcha/intro/index.html) to [
 
 ## Usage
 
-Simply include both `{% includeCssResource 'sproutformsgooglerecaptcha/css/style.css' %}` and `{% includeJsResource 'sproutformsgooglerecaptcha/js/script.js' %}` in your template. Then use one of the following methods to output the Google ReCAPATCHA depending on your setup.
+Simply include both `{% includeCssResource 'sproutformsgooglerecaptcha/css/sproutFormsGoogleRecaptcha_style.css' %}` and `{% includeJsResource 'sproutformsgooglerecaptcha/js/sproutFormsGoogleRecaptcha_script.js' %}` in your template. Then use one of the following methods to output the Google ReCAPATCHA depending on your setup.
 
 ### Automatic
 Sprout Forms Google ReCAPATCHA is meant to work out of the box using Sprout Form's `sproutForms.modifyForm` hook. In which case, you don't have to do anything!

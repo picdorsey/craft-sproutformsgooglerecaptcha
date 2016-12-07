@@ -1,11 +1,10 @@
 [
     {
-        "version": "1.0.1",
+        "version": "1.0.2",
         "downloadUrl": "https://github.com/picdorsey/craft-sproutformsgooglerecaptcha/archive/master.zip",
-        "date": "2016-08-09T16:10:18+00:00",
+        "date": "2016-12-07T11:22:00+00:00",
         "notes": [
-            "[Fixed] Scoped Javascript",
-            "[Fixed] General Cleanup"
+            "[Fixed] Rename assets to prevent collision with other plugins.",
         ]
     }
 ]
