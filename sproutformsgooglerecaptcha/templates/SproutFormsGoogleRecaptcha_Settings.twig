@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
  * @link      http://picdorsey.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     1.0.3
+ * @since     2.0.0
  */
 #}
 
@@ -32,3 +32,27 @@
     name: 'secreyKey',
     value: settings.secreyKey|default('')
 }) }}
+
+<hr>
+
+<div class="field" id="settings-enabledForms-field">
+    <div class="heading">
+        <label>Forms to attach ReCAPTCHA</label>
+    </div>
+    <div class="input ltr">
+        {% set options = [] %}
+        {% set values = [] %}
+        {% set availableForms = [] %}
+        {% for availableForm in craft.sproutforms.getAllForms() %}
+            {% set options = options|merge([availableForm.name]) %}
+            {% set values = options|merge([availableForm.handle]) %}
+            {% set availableForms = availableForms|merge({ (availableForm.handle) : availableForm.name}) %}
+        {% endfor %}
+        {{ forms.checkboxGroup({
+            name: 'enabledForms',
+            id: 'enabledForms',
+            options: availableForms,
+            values: settings.enabledForms
+        } )}}
+    </div>
+</div>

@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
  * @link      http://picdorsey.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     1.0.3
+ * @since     2.0.0
  */
 
 namespace Craft;
@@ -52,7 +52,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '1.0.3';
+        return '2.0.0';
     }
 
     /**
@@ -136,7 +136,12 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
                 'label' => 'Secret Key',
                 'default' => '',
                 'required' => true
-            ]
+            ],
+            'enabledForms' => [
+                AttributeType::Mixed,
+                'label' => 'Enabled Forms',
+                'default' => $this->_getForms()
+            ],
         );
     }
 
@@ -167,16 +172,42 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
     private function _hooks()
     {
         craft()->templates->hook('sproutForms.modifyForm', function (&$context) {
+            $handle = $context['entry']->form->handle;
+
+            if (! in_array($handle, $this->getSettings()->enabledForms)) {
+                return;
+            }
+
             return craft()->sproutFormsGoogleRecaptcha->getReCapatchaCode();
         });
 
         craft()->on('sproutForms.onBeforeSaveEntry', function (Event $event) {
             $entry = $event->params['entry'];
+            $handle = $entry->form->handle;
+
+            if (! in_array($handle, $this->getSettings()->enabledForms)) {
+                return;
+            }
 
             if (! craft()->sproutFormsGoogleRecaptcha->validateReCapatcha($entry)) {
                 echo craft()->templates->render('sproutformsgooglerecaptcha/SproutFormsGoogleRecaptcha_Error');
                 die();
             }
         });
+    }
+
+    /**
+     * Get all forms
+     */
+    private function _getForms()
+    {
+        $forms = sproutForms()->forms->getAllForms();
+        $enabledForms = [];
+
+        foreach ($forms as $form) {
+            $enabledForms[] = $form->handle;
+        }
+
+        return $enabledForms;
     }
 }
