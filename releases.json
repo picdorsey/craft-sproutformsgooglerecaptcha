@@ -1,9 +1,10 @@
 [
     {
-        "version": "1.0.2",
+        "version": "1.0.3",
         "downloadUrl": "https://github.com/picdorsey/craft-sproutformsgooglerecaptcha/archive/master.zip",
-        "date": "2016-12-07T11:22:00+00:00",
+        "date": "2017-01-23T00:00:00+00:00",
         "notes": [
+            "[Added] Ability to have multiple recaptchas on a page."
             "[Fixed] Rename assets to prevent collision with other plugins.",
         ]
     }

@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
  * @link      http://picdorsey.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     1.0.2
+ * @since     1.0.3
  */
 
 namespace Craft;
@@ -52,7 +52,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '1.0.2';
+        return '1.0.3';
     }
 
     /**

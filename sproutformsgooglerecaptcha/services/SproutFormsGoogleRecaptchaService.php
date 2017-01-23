@@ -4,11 +4,11 @@
  *
  * SproutFormsGoogleRecaptcha Service
  *
- * @author    Nicholas O'Donnell
- * @copyright Copyright (c) 2016 Nicholas O'Donnell
- * @link      http://nicholasodo.com
+ * @author    Nicholas O&#39;Donnell
+ * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
+ * @link      http://picdorsey.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     1.0.1
+ * @since     1.0.3
  */
 
 namespace Craft;
