@@ -4,11 +4,11 @@
  *
  * SproutFormsGoogleRecaptcha Service
  *
- * @author    Nicholas O&#39;Donnell
- * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
- * @link      http://picdorsey.com
+ * @author    Nicholas O'Donnell
+ * @copyright Copyright (c) 2016 Nicholas O'Donnell
+ * @link      http://nicholasodo.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     1.0.2
+ * @since     1.0.1
  */
 
 namespace Craft;
@@ -24,7 +24,7 @@ class SproutFormsGoogleRecaptchaService extends BaseApplicationComponent
     public function getReCapatchaCode()
     {
         $siteKey = craft()->plugins->getPlugin('sproutFormsGoogleRecaptcha')->getSettings()->siteKey;
-        $content = '<div class="g-recaptcha" data-sitekey="' . $siteKey . '"></div>';
+        $content = '<div class="g-recaptcha" data-sitekey="' . $siteKey . '" id="' . craft()->security->generateRandomString(8) . '"></div>';
         return TemplateHelper::getRaw($content);
     }
 

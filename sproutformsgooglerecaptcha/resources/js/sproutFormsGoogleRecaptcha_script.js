@@ -3,11 +3,11 @@
  *
  * Sprout Forms Google reCAPTCHA JS
  *
- * @author    Piccirilli Dorsey, Inc. (Nicholas O'Donnell)
- * @copyright Copyright (c) 2016 Piccirilli Dorsey, Inc. (Nicholas O'Donnell)
- * @link      http://picdorsey.com
+ * @author    Nicholas O'Donnell
+ * @copyright Copyright (c) 2016 Nicholas O'Donnell
+ * @link      http://nicholasodo.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     1.0.2
+ * @since     1.0.1
  */
 
 var sproutFormsGoogleReCAPTCHA = {
@@ -18,8 +18,20 @@ var sproutFormsGoogleReCAPTCHA = {
     loadRecaptchaApi: function () {
         var scriptTag = document.createElement('script');
         scriptTag.type = 'text/javascript';
-        scriptTag.src = 'https://www.google.com/recaptcha/api.js';
+        scriptTag.src = 'https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit';
         (document.getElementsByTagName('head')[0] || document.documentElement ).appendChild(scriptTag);
+
+        window.CaptchaCallback = function() {
+            var $recaptchas = document.querySelectorAll('.g-recaptcha');
+
+            for (var i = 0; i < $recaptchas.length; i++) {
+                var $recaptcha = $recaptchas[i];
+                var id = $recaptcha.getAttribute('id');
+                var siteKey = $recaptcha.dataset.sitekey;
+
+                grecaptcha.render(id, {'sitekey' : siteKey});
+            }
+        };
     },
 
     injectRecaptchaViaClass: function () {
