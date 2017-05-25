@@ -8,14 +8,11 @@
  * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
  * @link      http://picdorsey.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     2.0.0
+ * @since     2.0.1
  */
 #}
 
 {% import '_includes/forms' as forms %}
-
-{% includeCssResource 'sproutformsgooglerecaptcha/css/style.css' %}
-{% includeJsResource 'sproutformsgooglerecaptcha/js/script.js' %}
 
 {{ forms.textField({
     label: 'Site Key',
@@ -33,6 +30,7 @@
     value: settings.secreyKey|default('')
 }) }}
 
+{#
 <hr>
 
 <div class="field" id="settings-enabledForms-field">
@@ -56,3 +54,4 @@
         } )}}
     </div>
 </div>
+ #}

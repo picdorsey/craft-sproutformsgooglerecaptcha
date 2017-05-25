@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2016 Nicholas O&#39;Donnell
  * @link      http://picdorsey.com
  * @package   SproutFormsGoogleRecaptcha
- * @since     2.0.0
+ * @since     2.0.1
  */
 
 namespace Craft;
@@ -52,7 +52,7 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '2.0.0';
+        return '2.0.1';
     }
 
     /**
@@ -174,9 +174,9 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
         craft()->templates->hook('sproutForms.modifyForm', function (&$context) {
             $handle = $context['entry']->form->handle;
 
-            if (! in_array($handle, $this->getSettings()->enabledForms)) {
-                return;
-            }
+            // if (! in_array($handle, $this->getSettings()->enabledForms)) {
+            //     return;
+            // }
 
             return craft()->sproutFormsGoogleRecaptcha->getReCapatchaCode();
         });
@@ -184,12 +184,13 @@ class SproutFormsGoogleRecaptchaPlugin extends BasePlugin
         craft()->on('sproutForms.onBeforeSaveEntry', function (Event $event) {
             $entry = $event->params['entry'];
             $handle = $entry->form->handle;
+            $isNewEntry = $event->params['isNewEntry'];
 
-            if (! in_array($handle, $this->getSettings()->enabledForms)) {
-                return;
-            }
+            // if (! in_array($handle, $this->getSettings()->enabledForms)) {
+            //     return;
+            // }
 
-            if (! craft()->sproutFormsGoogleRecaptcha->validateReCapatcha($entry)) {
+            if ($isNewEntry && ! craft()->sproutFormsGoogleRecaptcha->validateReCapatcha($entry)) {
                 echo craft()->templates->render('sproutformsgooglerecaptcha/SproutFormsGoogleRecaptcha_Error');
                 die();
             }
